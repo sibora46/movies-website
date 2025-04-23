@@ -1,0 +1,193 @@
+/* General Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #121212; 
+    color: #fff;
+    line-height: 1.6;
+}
+
+/* Header */
+header {
+    background: #1a1a1a;
+    color: #c0a040;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+header .banner h1 {
+    font-size: 36px;
+    margin: 0;
+}
+
+header .banner .tagline {
+    font-size: 18px;
+    margin: 5px 0 0;
+    color: #bbb;
+}
+
+/* Featured Movies Section */
+.featured-movies {
+    padding: 20px;
+}
+
+.featured-movies h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #c0a040;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    justify-items: center;
+}
+
+/* Movie Item */
+.movie {
+    background: #1a1a1a;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column; /* Rendit elementët vertikalisht */
+    height: 100%; /* gjithe filmat kane te njejten madhsi */
+}
+
+.movie:hover {
+    transform: scale(1.05);
+}
+
+.movie img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.movie h3 {
+    font-size: 20px;
+    margin: 10px 0;
+    color: #c0a040;
+}
+
+.movie .synopsis {
+    font-size: 14px;
+    color: #bbb;
+    flex-grow: 1; /* Pershkrimi mbush hapsiren e mbetur */
+}
+
+.movie .rating {
+    font-size: 14px;
+    color: #888;
+    margin: 10px 0;
+}
+
+.movie .trailer-btn {
+    display: inline-block;
+    margin-top: auto; 
+    padding: 8px 16px;
+    background: #c0a040;
+    color: #121212;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.movie .trailer-btn:hover {
+    background: #a78d36;
+}
+
+
+/* Registration Form Section */
+.registration-form {
+    background: #1a1a1a;
+    padding: 30px;
+    margin: 40px auto;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 500px;
+}
+
+.registration-form h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #c0a040;
+}
+
+.registration-form label {
+    display: block;
+    margin: 10px 0 5px;
+    color: #bbb;
+}
+
+.registration-form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #888;
+    background: #333;
+    color: #fff;
+    border-radius: 5px;
+}
+
+/* Checkbox Styling */
+.checkbox {
+    display: flex;
+    align-items: center; 
+    gap: 10px; 
+    font-size: 14px;
+    color: #bbb;
+    margin: 15px 0; 
+}
+
+.checkbox input {
+    width: auto; 
+    margin: 0; 
+}
+
+.registration-form button {
+    width: 100%;
+    padding: 12px;
+    background: #c0a040;
+    color: #121212;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.registration-form button:hover {
+    background: #a78d36;
+}
+
+#confirmation-message {
+    margin-top: 20px;
+    color: #4CAF50;
+    font-weight: bold;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Footer */
+footer {
+    background: #1a1a1a;
+    padding: 20px;
+    text-align: center;
+    color: #bbb;
+    margin-top: 40px;
+}
+
+footer a {
+    color: #c0a040;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}

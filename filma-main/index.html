@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="sq">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CineWorld</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- ===== HEADER SECTION ===== -->
+    <header>
+        <div class="banner">
+            <h1>CineWorld</h1>
+            <p class="tagline">Your Ultimate Destination for Movies</p>
+        </div>
+    </header>
+
+    <!-- ===== MAIN CONTENT SECTION ===== -->
+    <main>
+        <!-- Featured Movies Section -->
+        <section class="featured-movies">
+            <h2>Featured Movies</h2>
+            <div class="container">
+                <!-- Movie 1: Anora -->
+                <div class="movie">
+                    <img src="images/anoraa.png" alt="Poster i Filmit Anora">
+                    <h3>Anora</h3>
+                    <p class="synopsis">A modern Cinderella tale set in contemporary times, blending classic storytelling with a fresh perspective. </p>
+                    <p class="rating">Rating: R</p>
+                    <a href="https://youtu.be/GuPkfvxmtdw" class="trailer-btn" target="_blank">Watch Trailer</a>
+                </div>
+
+                <!-- Movie 2: The Brutalist -->
+                <div class="movie">
+                    <img src="images/tb.jpg" alt="Poster i Filmit The Brutalist">
+                    <h3>The Brutalist</h3>
+                    <p class="synopsis">A visionary architect escapes post-war Europe to rebuild his life in America, facing challenges that test his resilience. .</p>
+                    <p class="rating">Rating: R</p>
+                    <a href="https://youtu.be/GdRXPAHIEW4" class="trailer-btn" target="_blank">Watch Trailer</a>
+                </div>
+
+                <!-- Movie 3: The Boy and the Heron -->
+                <div class="movie">
+                    <img src="images/tbath.png" alt="Poster i Filmit The Boy and the Heron">
+                    <h3>The Boy and the Heron</h3>
+                    <p class="synopsis">An animated fantasy exploring a young boy's journey through a magical realm guided by a mysterious heron.</p>
+                    <p class="rating">Rating: PG-13</p>
+                    <a href="https://youtu.be/t5khm-VjEu4" class="trailer-btn" target="_blank">Watch Trailer</a>
+                </div>
+
+                <!-- Movie 4: A Complete Unknown -->
+                <div class="movie">
+                    <img src="images/complete-unknown.png" alt="Poster i Filmit A Complete Unknown">
+                    <h3>A Complete Unknown</h3>
+                    <p class="synopsis">A biographical film starring Timothée Chalamet as Bob Dylan, delving into the iconic musician's life and career.</p>
+                    <p class="rating">Rating: R</p>
+                    <a href="https://youtu.be/FdV-Cs5o8mc" class="trailer-btn" target="_blank">Watch Trailer</a>
+                </div>
+
+                <!-- Movie 5: The Substance -->
+                <div class="movie">
+                    <img src="images/the-substance.png" alt="Poster i Filmi the Substance" >
+                    <h3>The Substance</h3>
+                    <p class="synopsis">A gripping narrative about a youth-reviving drug, exploring its implications on society and individual identity.</p>
+                    <p class="rating">Rating: R</p>
+                    <a href="https://youtu.be/LNlrGhBpYjc" class="trailer-btn" target="_blank">Watch Trailer</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Registration Form Section -->
+        <section class="registration-form">
+            <h2>Regjistrohu për Njoftime</h2>
+            <form id="registration-form" action="submit.php" method="POST">
+                <!-- Name Field -->
+                <label for="name">Emri:</label>
+                <input type="text" id="name" name="name" required aria-label="Emri">
+
+                <!-- Surname Field -->
+                <label for="surname">Mbiemri:</label>
+                <input type="text" id="surname" name="surname" required aria-label="Mbiemri">
+
+                <!-- Age Field -->
+                <label for="age">Mosha:</label>
+                <input type="number" id="age" name="age" min="13" max="100" required aria-label="Mosha">
+
+                <!-- Email Field -->
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required aria-label="Email">
+
+                <!-- Profession Field -->
+                <label for="profession">Profesioni:</label>
+                <input type="text" id="profession" name="profession" required aria-label="Profesioni">
+
+                <!-- Checkbox for Notifications -->
+                <div class="checkbox">
+                    <input type="checkbox" id="notifications" name="notifications" required>
+                    <label for="notifications">Pranoj të marr njoftime për filmat e ri</label>
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit" class="btn">Regjistrohu</button>
+            </form>
+            <p id="confirmation-message" class="hidden">Faleminderit për regjistrimin!</p>
+        </section>
+    </main>
+
+    <!-- ===== FOOTER SECTION ===== -->
+    <footer>
+        <p>CineWorld &copy; 2025 | Kontakt: <a href="mailto:CineWorld@gmail.com">CineWorld@gmail.com</a></p>
+    </footer>
+
+    <!-- JavaScript for Form Validation and Confirmation -->
+    <script>
+        document.getElementById('registration-form').addEventListener('submit', function (e) {
+            const ageInput = document.getElementById('age');
+            const age = parseInt(ageInput.value, 10);
+            const checkbox = document.getElementById('notifications');
+
+            // Validate age
+            if (age < 13 || age > 100) {
+                alert('Ju lutem shkruani një moshë midis 13 dhe 100.');
+                e.preventDefault(); // Prevent form submission
+                return;
+            }
+
+            // Validate checkbox
+            if (!checkbox.checked) {
+                alert('Ju lutem pranoni të merrni njoftime për filmat e ri duke klikuar kutinë e verifikimit.');
+                e.preventDefault(); // Prevent form submission
+                return;
+            }
+
+            // If validation passes, show confirmation message and reset the form
+            document.getElementById('confirmation-message').classList.remove('hidden');
+            this.reset();
+        });
+    </script>
+</body>
+</html>
+               
